@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public Rigidbody2D ribiBody2D;
 
@@ -10,12 +10,15 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private Vector2 direction;
 
+    Vector2 startPosition;
+
+    private void Start()
+    {
+        startPosition = transform.position;
+    }
 
 
 
-
-    
-    
     void Update()
     {
         inputValue = Input.GetAxisRaw("Horizontal");
@@ -36,5 +39,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
         ribiBody2D.AddForce(direction * moveSpeed * Time.deltaTime * 100);
         
         
+    }
+    public void ResetPlayer()
+    {
+        transform.position = startPosition;
+        ribiBody2D.linearVelocity = Vector2.zero;
     }
 }
