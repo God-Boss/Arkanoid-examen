@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame()
     {
-        // Para volver al menú principal (si tienes uno)
+        // Para volver al menu principal (si tienes uno)
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu"); // Cambia por el nombre de tu menú
     }
