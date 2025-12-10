@@ -51,6 +51,14 @@ public class Ball : MonoBehaviour
         {
             FindAnyObjectByType<GameManager>().LoseHealth();
         }
+        else
+        {
+            // Sonido de rebote
+            if (AudioManager.instance != null)
+            {
+                AudioManager.instance.PlayBallBounce();
+            }
+        }
     }
 
     public void ResetBall()

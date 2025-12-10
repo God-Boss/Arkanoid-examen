@@ -32,6 +32,12 @@ public class GameManager : MonoBehaviour
         lives--;
         UpdateUI();
 
+        // Sonido de perder vida
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayLoseLife();
+        }
+
         if (lives <= 0)
         {
             GameOver();
@@ -82,10 +88,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void QuitGame()
+    public void BackToMenu()
     {
-        // Para volver al menu principal (si tienes uno)
+        // Volver al menú principal
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu"); // Cambia por el nombre de tu menú
+        SceneManager.LoadScene("MainMenu");
     }
 }
