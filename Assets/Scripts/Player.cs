@@ -17,8 +17,6 @@ public class Player : MonoBehaviour
         startPosition = transform.position;
     }
 
-
-
     void Update()
     {
         inputValue = Input.GetAxisRaw("Horizontal");
@@ -34,12 +32,13 @@ public class Player : MonoBehaviour
         else
         {
             direction = Vector2.zero;
+            // Frenar en seco cuando no hay input
+            ribiBody2D.linearVelocity = Vector2.zero;
         }
 
         ribiBody2D.AddForce(direction * moveSpeed * Time.deltaTime * 100);
-        
-        
     }
+
     public void ResetPlayer()
     {
         transform.position = startPosition;
