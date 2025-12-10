@@ -27,7 +27,8 @@ public class Ball : MonoBehaviour
         transform.position = startPosition;
         rigiBody2D.linearVelocity = Vector2.zero;
 
-        velocity.x = Random.Range(-1f, 1f);
+        
+        velocity.x = Random.Range(-0.2f, 0.2f);
         velocity.y = 1;
 
         rigiBody2D.AddForce(velocity.normalized * speed);
